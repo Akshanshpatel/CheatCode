@@ -6,7 +6,6 @@ import RoadMap from './pages/RoadMap'
 import About from './pages/About'
 import Practice from './pages/Practice'
 import NotFound from './pages/NotFound'
-import Login from './components/Login'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 
 
@@ -24,7 +23,6 @@ const router=createBrowserRouter([
     {path:"/practice",element:<Practice/>},
     {path:"/roadmap",element:<RoadMap/>},
     {path:"*",element:<NotFound/>},
-    {path:"login",element:<GoogleAuthWrapper/>},
 ])
 
 
