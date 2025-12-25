@@ -91,9 +91,11 @@ const Navbar = () => {
             <img
               src={user.photoURL}
               alt="profile"
-              className="h-8 w-8 cursor-pointer rounded-full"
+              className="h-8 w-8 cursor-pointer rounded-full object-cover"
+              referrerPolicy="no-referrer"  //this solves the CORB issue browser blocking the image
+
               onClick={() => setOpen((prev) => !prev)}
-            />
+              />
 
             {open && (
               <div className="absolute right-0 mt-2 w-64 rounded-md border border-zinc-700 bg-[#1e1f22] shadow-lg">
@@ -106,7 +108,7 @@ const Navbar = () => {
 
                 <button
                   onClick={handleSignOut}
-                  className="w-full px-4 py-2 text-left hover:bg-zinc-800"
+                  className="w-full px-4 py-2 text-left hover:bg-zinc-800 cursor-pointer"
                 >
                   Sign out
                 </button>
