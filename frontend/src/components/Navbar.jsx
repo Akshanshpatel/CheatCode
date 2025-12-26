@@ -65,8 +65,8 @@ const Navbar = () => {
         </Link>
 
         <ul className="flex gap-20">
-          <li><Link to="/practice">Practice</Link></li>
-          <li><Link to="/roadmap">Roadmap</Link></li>
+          <li><Link to="/practice">Practice (DSA)</Link></li>
+          <li><Link to="/roadmap">Academic</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
 

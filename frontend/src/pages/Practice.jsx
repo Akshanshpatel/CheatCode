@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Navbar from '@/components/Navbar';
 import {ArrowRight,Search,CircleQuestionMark,Trash2, ChevronDown, Star} from "lucide-react"
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
+import { arrayData } from '@/data/Arrays';
 
 const Practice = () => {
 
   const [open,setOpen]=useState(false);
   const [star,setStar]=useState(false);
+  const [progress, setProgress] = useState(null);
+
 
   return (
     <div>  
@@ -104,6 +106,7 @@ const Practice = () => {
       </div>
 
       {/* Rows */}
+      
       
     </div>
   </div>
