@@ -1,14 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Navbar from '@/components/Navbar';
-import {ArrowRight,Search,CircleQuestionMark,Trash2, ChevronDown, Star} from "lucide-react"
+import {ArrowRight,Search,CircleQuestionMark,Trash2, ChevronDown, Star,SquareCheckBig} from "lucide-react"
 import Footer from '@/components/Footer';
+import  {auth} from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+
 import { arrayData } from '@/data/Arrays';
+import {createUserIfNotExists,getUserProgress,toggleSolved,toggleStarred} from "../lib/userProgress";
 
 const Practice = () => {
 
   const [open,setOpen]=useState(false);
-  const [star,setStar]=useState(false);
-  const [progress, setProgress] = useState(null);
+  const [problems, setProblems] = useState(arrayData);
+
+
+useEffect(() => {
+  const unsub = onAuthStateChanged(auth, async (user) => {
+    // console.log("AUTH STATE:", user);
+
+    if (!user) {
+      // console.log("❌No user logged in");
+      return;
+    }
+
+    const uid = user.uid;
+    // console.log("✅ UID:", uid);
+
+    await createUserIfNotExists(user);
+
+    const progress = await getUserProgress(uid);
+    // console.log("📦 FIRESTORE PROGRESS:", progress);
+
+    if (progress?.solvedProblems) {
+      setProblems(prev =>
+        prev.map(p => ({...p,
+          done: !!progress.solvedProblems[p.id],
+          star: !!progress?.stars?.[p.id], 
+        }))
+      );
+    }
+  });
+
+  return () => unsub();
+}, []);
+
+
+  const solvedCount = problems.filter(p => p.done).length;
+  const totalCount = problems.length;
+
+  const progressPercent = totalCount? Math.round((solvedCount / totalCount) * 100): 0;
+
 
 
   return (
@@ -78,13 +119,28 @@ const Practice = () => {
 
     <button onClick={()=>{
       setOpen(prev=>!prev)
-    }} className='mx-auto flex w-11/12 h-12 cursor-pointer text-white font-bold bg-[#2f3136] rounded-lg
+    }} className='mx-auto flex w-11/12 h-12  cursor-pointer text-white font-bold bg-[#2f3136] rounded-lg
      px-6 py-4 hover:outline hover:outline-blue-200 '>
        <ChevronDown
       className={`transition-transform ${open ? "rotate-180" : ""}`}
     />
+    
       Arrays & Hashing 
+      {/* progress count here */}
+      <span className="ml-auto text-white pr-5">
+        {solvedCount}/{totalCount}
+      </span>
+
+      <div className=" w-40 h-2 mt-1  overflow-hidden
+      bg-gray-600  outline-1 outline-white/10">
+        <div
+          className="h-full bg-emerald-500 transition-all duration-300"
+          style={{ width: `${progressPercent}%` }}
+        />
+      </div>
+
     </button>
+
 
     {/* Accordian here */}
     <div
@@ -106,7 +162,69 @@ const Practice = () => {
       </div>
 
       {/* Rows */}
-      
+      {problems.map((p) => (
+        <div
+          key={p.id}
+          className={`grid grid-cols-6 px-4 py-2 border-b border-gray-700 items-center transition-colors
+    ${p.done ? "bg-green-900 text-white" : "text-white"}
+  `}>
+          
+          
+      {/* Status */}
+          <span>
+           <button onClick={async () => {
+                await toggleSolved(auth.currentUser.uid,p.id,p.done);
+                  setProblems(prev =>prev.map(x =>x.id === p.id? { ...x, done: !x.done }: x));
+                }}>
+                <SquareCheckBig className={`w-5 h-5 cursor-pointer ${
+                    p.done? "fill-amber-400 text-black": "fill-transparent text-white"
+                  }`}
+                />
+            </button>
+          </span>
+
+
+      {/* Star  */}
+          <span>
+            <button onClick={async () => {
+                const uid = auth.currentUser.uid;
+
+                // 1️⃣ Update Firestore
+                await toggleStarred(uid, p.id, p.star);
+
+                // 2️⃣ Update UI (optimistic)
+                setProblems(prev => prev.map(x => x.id === p.id ? { ...x, star: !x.star }: x)
+                );
+              } }
+              className="p-1 cursor-pointer"
+            >
+              <Star
+                className={`w-5 h-5 ${p.star
+                    ? "fill-amber-400 text-black"
+                    : "text-white"}`} />
+            </button>
+          </span>
+
+
+
+          {/* Problem */}
+          <span className='col-span-2'>
+            <a href={p.url} target='_blank' className="hover:text-blue-400">{p.title}</a>
+          </span>
+
+          {/* Difficulty */}
+          <span className=
+          {`${p.difficulty == "Easy" ? "text-green-500" :
+           p.difficulty == "Medium" ? "text-yellow-500" : "text-red-500"}`}>{p.difficulty}
+          </span>
+
+          {/* Solution */}
+          <span>
+            Just Do it
+          </span>
+        </div>
+      ))}
+
       
     </div>
   </div>

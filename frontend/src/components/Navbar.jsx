@@ -59,12 +59,14 @@ const Navbar = () => {
 
   return (
     <header className="bg-[#2f3136]">
-      <nav className="flex items-center p-5 font-bold text-white">
-        <Link to="/" className="text-xl px-10 mr-20">
-          Logo
-        </Link>
+      <nav className="flex items-center p-5 font-bold h-20 text-white ">
 
-        <ul className="flex gap-20">
+          <Link to="/">
+          <img src="/logo.png" alt="logo" className="h-15 w-20 ml-20"/>
+
+          </Link>
+                                                                                
+        <ul className="flex gap-20 ml-50">
           <li><Link to="/practice">Practice (DSA)</Link></li>
           <li><Link to="/roadmap">Academic</Link></li>
           <li><Link to="/about">About</Link></li>
