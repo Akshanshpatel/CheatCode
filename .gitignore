@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+firebase.js
+frontend/firebase.js
+
 .env
 backend/.env
 
