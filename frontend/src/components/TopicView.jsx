@@ -4,15 +4,17 @@ import {
   Star,
 } from "lucide-react";
 
-export default function TopicsView({
+
+
+export default function TopicView({
   topics,
   topicProblems,
   openMap,
   setOpenMap,
   setTopicProblems,
-  auth,
-  toggleSolved,
-  toggleStarred,
+  auth={auth},
+  toggleSolved={toggleSolved},
+  toggleStarred={toggleStarred}
 }) {
   const toggleTopic = (id) => {
     setOpenMap(prev => ({
@@ -80,7 +82,7 @@ export default function TopicsView({
                     }`}
                   >
                     {/* Solved */}
-                    <button
+                    <button 
                       onClick={async () => {
                         await toggleSolved(auth.currentUser.uid, p.id, p.done);
                         setTopicProblems(prev => ({
@@ -91,8 +93,8 @@ export default function TopicsView({
                         }));
                       }}
                     >
-                      <SquareCheckBig
-                        className={`w-5 h-5 ${
+                      <SquareCheckBig 
+                        className={`w-5 h-5 cursor-pointer ${
                           p.done
                             ? "fill-amber-400 text-black"
                             : "fill-transparent text-white"
@@ -113,7 +115,7 @@ export default function TopicsView({
                       }}
                     >
                       <Star
-                        className={`w-5 h-5 ${
+                        className={`w-5 h-5 cursor-pointer ${
                           p.star
                             ? "fill-amber-400 text-black"
                             : "text-white"
@@ -122,13 +124,14 @@ export default function TopicsView({
                     </button>
 
                     {/* Problem */}
-                    <a
-                      href={p.url}
+                    <a href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="col-span-2 hover:text-blue-400"
-                    >
+                      className="col-span-2 "
+                    > 
+                    <span className="hover:text-blue-400">
                       {p.title}
+                    </span>
                     </a>
 
                     {/* Difficulty */}
@@ -140,8 +143,9 @@ export default function TopicsView({
                           ? "text-yellow-500"
                           : "text-red-500"
                       }
-                    >
+                    ><span className="pl-6">
                       {p.difficulty}
+                    </span>
                     </span>
 
                     {/* Solution */}

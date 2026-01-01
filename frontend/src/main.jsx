@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import RoadMap from './pages/RoadMap'
+import Academic from './pages/Academic'
 import About from './pages/About'
 import Practice from './pages/Practice'
 import NotFound from './pages/NotFound'
@@ -21,7 +21,7 @@ const router=createBrowserRouter([
     {path:"/",element:<App/>},
     {path:"/about",element:<About/>},
     {path:"/practice",element:<Practice/>},
-    {path:"/roadmap",element:<RoadMap/>},
+    {path:"/academic",element:<Academic/>},
     {path:"*",element:<NotFound/>},
 ])
 

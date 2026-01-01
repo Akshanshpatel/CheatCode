@@ -4,11 +4,13 @@ import Footer from "@/components/Footer";
 
 import { ArrowRight, } from "lucide-react";
 
-import { auth } from "../firebase";
+import { auth } from "../firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   createUserIfNotExists,
   getUserProgress,
+  toggleSolved,
+  toggleStarred,
 } from "../lib/userProgress";
 
 import { topics } from "@/data";
@@ -96,7 +98,11 @@ const Practice = () => {
               topics={topics}
               topicProblems={topicProblems}
               openMap={openMap}
+              setTopicProblems={setTopicProblems}
               setOpenMap={setOpenMap}
+              auth={auth}
+              toggleSolved={toggleSolved}
+              toggleStarred={toggleStarred}
             />
           )}
         </section>
