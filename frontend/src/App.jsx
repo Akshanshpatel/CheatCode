@@ -9,7 +9,7 @@ function App() {
   
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0a0a]">
    <Navbar/>    
    <Home/>
    <Footer/>

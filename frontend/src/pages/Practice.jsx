@@ -71,7 +71,7 @@ const Practice = () => {
     <>
       <Navbar />
 
-      <main className="bg-[#202225] min-h-screen overflow-x-hidden">
+      <main className="bg-[#18181b] min-h-screen overflow-x-hidden">
         {/* HEADER */}
         <section className="min-w-screen min-h-45">
           <h2 className="flex text-white text-xl font-bold pl-30 pt-15">

@@ -40,7 +40,10 @@ export default function TopicView({
             {/* HEADER */}
             <button
               onClick={() => toggleTopic(topic.id)}
-              className="mx-auto flex w-11/12 h-12 cursor-pointer bg-[#2f3136] text-white font-bold rounded-lg px-6 py-4 items-center"
+              className="mx-auto flex w-9/12 h-12 cursor-pointer bg-[#2f3136] text-white
+           font-bold rounded-lg px-6 py-4 items-center
+           border border-white/10 hover:border-white/70
+           transition-colors duration-200"
             >
               <ChevronDown
                 className={`transition-transform ${
@@ -64,7 +67,7 @@ export default function TopicView({
 
             {/* ACCORDION */}
             {open && (
-              <div className="mx-auto w-11/12 mt-2 bg-[#1f2225] rounded-lg border border-gray-700">
+              <div className="mx-auto w-8/12 mt-2 bg-[#1f2225] rounded-lg border border-gray-700">
                 {/* Headings */}
                 <div className="grid font-bold grid-cols-6 px-4 py-2 border-b border-gray-600 text-gray-300">
                   <span>Status</span>

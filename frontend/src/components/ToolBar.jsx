@@ -8,7 +8,7 @@ import {
 export default function ToolBar({ value, onChange }) {
   return (
     <>
-    <section className="mt-10 mx-auto w-11/12 bg-[#2f3136] 
+    <section className="mt-10 mx-auto w-10/12 bg-[#2f3136] 
     rounded-lg px-6 py-4 flex items-center justify-between">
     <div className="relative w-80">
     <Search
