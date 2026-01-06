@@ -80,7 +80,7 @@ const Navbar = () => {
         </div>
 
        {/* Auth Section */}
-        <div className="relative" ref={menuRef}>
+        <div className="relative z-10" ref={menuRef}>
         {!user ? (
           <button
             onClick={signInGoogle}

@@ -97,7 +97,7 @@ export default function TopicView({
                       }}
                     >
                       <SquareCheckBig 
-                        className={`w-5 h-5 cursor-pointer ${
+                        className={`w-6 h-6 cursor-pointer ${
                           p.done
                             ? "fill-amber-400 text-black"
                             : "fill-transparent text-white"
@@ -118,7 +118,7 @@ export default function TopicView({
                       }}
                     >
                       <Star
-                        className={`w-5 h-5 cursor-pointer ${
+                        className={`w-6 h-6 cursor-pointer ${
                           p.star
                             ? "fill-amber-400 text-black"
                             : "text-white"
@@ -152,7 +152,7 @@ export default function TopicView({
                     </span>
 
                     {/* Solution */}
-                    <span>Just Do it</span>
+                    <span>Later</span>
                   </div>
                 ))}
               </div>

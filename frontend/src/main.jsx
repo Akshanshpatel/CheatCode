@@ -7,6 +7,7 @@ import About from './pages/About'
 import Practice from './pages/Practice'
 import NotFound from './pages/NotFound'
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import Wordle from './pages/Wordle'
 
 
 const GoogleAuthWrapper=()=>{
@@ -19,6 +20,7 @@ const GoogleAuthWrapper=()=>{
 
 const router=createBrowserRouter([
     {path:"/",element:<App/>},
+    {path:"/wordle",element:<Wordle/>},
     {path:"/about",element:<About/>},
     {path:"/practice",element:<Practice/>},
     {path:"/academic",element:<Academic/>},
