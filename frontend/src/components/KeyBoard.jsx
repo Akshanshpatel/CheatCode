@@ -6,7 +6,7 @@ const ROWS = [
   ["enter", "z", "x", "c", "v", "b", "n", "m", "back"],
 ];
 
-export default function Keyboard({ onKeyPress, letterStates = {} }) {
+export default function Keyboard({ onKeyPress, letterStates = {} ,shake=false,}) {
   const getKeyClass = (key) => {
     if (key === "enter" || key === "back") {
       return "px-4 bg-gray-700";
@@ -22,7 +22,7 @@ export default function Keyboard({ onKeyPress, letterStates = {} }) {
   };
 
   return (
-    <div className="flex flex-col gap-2 mt-6">
+    <div className={`flex flex-col gap-2 mt-6 ${shake ? "shake" : ""}`}>
       {ROWS.map((row, i) => (
         <div key={i} className="flex gap-2 justify-center">
           {row.map((key) => (

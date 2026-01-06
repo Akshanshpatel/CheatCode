@@ -73,13 +73,16 @@ const Practice = () => {
 
       <main className="bg-[#18181b] min-h-screen overflow-x-hidden">
         {/* HEADER */}
-        <section className="min-w-screen min-h-45">
+        <section className="min-w-screen min-h-45 flex">
           <h2 className="flex text-white text-xl font-bold pl-30 pt-15">
             Progress
             <span className="pl-5">
               <ArrowRight />
             </span>
           </h2>
+
+          <img src="/doit.gif" alt="" className="absolute right-23 h-50 w-50"/>
+
         </section>
 
         <hr className="w-2/3 mx-auto" />

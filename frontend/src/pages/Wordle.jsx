@@ -3,6 +3,7 @@ import GuessRow from "../components/GuessRow";
 import Keyboard from "../components/KeyBoard";
 import { Game_Rounds, Game_Word_Len } from "@/utils/constants";
 import Navbar from "@/components/Navbar";
+import { answer, validSet } from "@/utils/words";
 
 /* ---------- Wordle Logic Helpers ---------- */
 
@@ -42,7 +43,14 @@ const priority = { gray: 1, yellow: 2, green: 3 };
 /* ---------- Component ---------- */
 
 const Wordle = () => {
-  const correctWord = "lotus"; // later: randomize from word list
+  const getRandomWord = () => {
+  return answer[
+    Math.floor(Math.random() * answer.length)
+  ];
+};
+
+const [correctWord, setCorrectWord] = useState(getRandomWord);
+
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [guesses, setGuesses] = useState([]);
@@ -53,7 +61,10 @@ const Wordle = () => {
     setCurrentGuess("");
     setGuesses([]);
     setGameOver(false);
+    setCorrectWord(getRandomWord());
   };
+ const [shakeKeyboard, setShakeKeyboard] = useState(false);
+const [error, setError] = useState("");
 
   /* ---------- Unified Input Handler ---------- */
   const handleInput = (key) => {
@@ -66,6 +77,13 @@ const Wordle = () => {
 
     if (key === "enter") {
       if (currentGuess.length !== Game_Word_Len) return;
+      if (!validSet.has(currentGuess)){
+      setShakeKeyboard(true);
+  setTimeout(() => setShakeKeyboard(false), 400);
+  setError("Not in word list");
+  setTimeout(() => setError(""), 1500);
+  return;
+      }
 
       const nextGuesses = [...guesses, currentGuess];
       setGuesses(nextGuesses);
@@ -159,7 +177,7 @@ const Wordle = () => {
           </div>
         )}
         
-        <Keyboard onKeyPress={handleInput} letterStates={letterStates} />
+        <Keyboard onKeyPress={handleInput} letterStates={letterStates} shake={shakeKeyboard}/>
        
       </div>
     </div>

@@ -9,7 +9,6 @@ const Home = () => {
         <h1 className="text-lg md:text-7xl bg-clip-text text-transparent bg-linear-to-b from-neutral-200 to-neutral-600 text-center font-bold">
           CheatCode
         </h1>
-        <img src="/just-do-it-do-it.gif" alt="" />
 
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center">
           Description here
