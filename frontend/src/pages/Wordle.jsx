@@ -162,11 +162,29 @@ const [error, setError] = useState("");
 
         {gameOver && (
           <div className="flex flex-col items-center gap-4">
-            <h2 className="text-white text-xl">
-              {guesses.includes(correctWord)
-                ? "You Win 🤯"
-                : `You Lose 🥀  ${correctWord}`}
-            </h2>
+            <h2 className="text-white text-xl text-center">
+  {guesses.includes(correctWord) ? (
+    <span>
+       <strong>You Won!</strong>🤯 <br />
+      Send ss on WhatsApp for choco <br />
+
+      <a
+        href="https://wa.me/919528038319?text=I%20won%20the%20game!%20Here%20is%20my%20screenshot"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-3 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+      >
+        💬WhatsApp
+      </a>
+    </span>
+  ) : (
+    <span>
+       <strong>You Lose!</strong> 🥀<br />
+      Correct word was: <span className="text-red-400">{correctWord}</span>
+    </span>
+  )}
+</h2>
+
 
             <button
               onClick={restartGame}

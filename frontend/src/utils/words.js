@@ -1,5 +1,6 @@
 export const answers = {
   valid:[
+"nigga",
 "aback",
 "abase",
 "abate",
@@ -2784,7 +2785,7 @@ export const answers = {
     "games","ghost","giant","given","glass","globe","glory","grade","grain","grant",
     "grape","graph","grass","great","green","group","guess","guest","guide",
 
-    "happy","heart","heavy","hello","helps","hobby","honor","horse","hotel","house",
+    "happy","heart","heavy","hello","hobby","honor","horse","hotel","house",
     "human","humor","hungry",
 
     "ideal","image","index","input","issue","items",
@@ -2831,7 +2832,8 @@ export const answers = {
     "whole","whose","woman","women","words","works","world","worry","worse","worst",
     "worth","would","write",
 
-    "years","young","youth"
+    "years","young","youth",
+    "nigga"
   ]
 };
 
