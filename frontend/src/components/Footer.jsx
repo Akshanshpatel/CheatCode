@@ -11,15 +11,18 @@ const Footer = () => {
     </h4>
 
     <ul className="flex space-x-10 text-blue-400">
-        <a href="https://yap-site.vercel.app/" className="hover:text-blue-300 transition cursor-pointer">Yapsite</a>
+        <a href="https://wa.me/919528038319" className="hover:text-blue-300 transition cursor-pointer"target='_blank'>Whatsapp</a>
+
+        <a href="https://yap-site.vercel.app/" className="hover:text-blue-300 transition cursor-pointer" target='_blank'>Yapsite</a>
       
-        <a href="https://www.instagram.com/__aks_patel/" className="hover:text-blue-300 transition cursor-pointer">Instagram</a>
+        <a href="https://www.instagram.com/__aks_patel/" className="hover:text-blue-300 transition cursor-pointer"target='_blank'>Instagram</a>
 
-        <a href="https://www.linkedin.com/in/aks-patel/" className="hover:text-blue-300 transition cursor-pointer">Linkedin</a>
+        <a href="https://www.linkedin.com/in/aks-patel/" className="hover:text-blue-300 transition cursor-pointer"target='_blank'>Linkedin</a>
 
-        <a href="https://leetcode.com/u/_aks_patel/" className="hover:text-blue-300 transition cursor-pointer">Leetcode</a>
+        <a href="https://leetcode.com/u/_aks_patel/" className="hover:text-blue-300 transition cursor-pointer"target='_blank'>Leetcode</a>
 
-        <a href="https://github.com/Akshanshpatel" className="hover:text-blue-300 transition cursor-pointer">Github</a>
+        <a href="https://github.com/Akshanshpatel" className="hover:text-blue-300 transition cursor-pointer"target='_blank'>Github</a>
+
     </ul>
   </div>
 </div>

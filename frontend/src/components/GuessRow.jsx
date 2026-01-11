@@ -1,5 +1,5 @@
 import React from "react";
-import { Game_Word_Len } from "@/utils/constants";
+import { Game_Word_Len } from "@/utils/words";
 
 export default function GuessRow({ correct, current = "",isSubmitted }) {
   function getTileColor(letter, index) {

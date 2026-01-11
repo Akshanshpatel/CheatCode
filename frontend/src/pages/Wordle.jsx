@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import GuessRow from "../components/GuessRow";
 import Keyboard from "../components/KeyBoard";
-import { Game_Rounds, Game_Word_Len } from "@/utils/constants";
+import { Game_Rounds, Game_Word_Len } from "@/utils/words";
 import Navbar from "@/components/Navbar";
 import { answer, validSet } from "@/utils/words";
 
