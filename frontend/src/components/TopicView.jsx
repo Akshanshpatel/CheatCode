@@ -67,22 +67,21 @@ export default function TopicView({
 
             {/* ACCORDION */}
             {open && (
-              <div className="mx-auto w-8/12 mt-2 bg-[#1f2225] rounded-lg border border-gray-700">
+              <div className="mx-auto w-full md:w-11/12 lg:w-7/12 mt-2 bg-[#393d42] rounded-lg border border-gray-700">
                 {/* Headings */}
                 <div className="grid font-bold grid-cols-6 px-4 py-2 border-b border-gray-600 text-gray-300">
                   <span>Status</span>
                   <span>Star</span>
                   <span className="col-span-2">Problem</span>
-                  <span>Difficulty</span>
+                  <span className="pl-10">Difficulty</span>
                   <span>Solution</span>
                 </div>
 
                 {problems.map(p => (
                   <div
                     key={p.id}
-                    className={`grid grid-cols-6 px-4 py-2 border-b border-gray-700 items-center ${
-                      p.done ? "bg-green-900 text-white" : "text-white"
-                    }`}
+                   className={`grid grid-cols-1 md:grid-cols-6 gap-3 md:gap-0 px-4 py-3 border-b border-gray-700 ${
+                    p.done ? "bg-green-900 text-white" : "text-white"}`}
                   >
                     {/* Solved */}
                     <button 
@@ -132,7 +131,7 @@ export default function TopicView({
                       rel="noopener noreferrer"
                       className="col-span-2 "
                     > 
-                    <span className="hover:text-blue-400">
+                    <span className="hover:text-blue-400 ">
                       {p.title}
                     </span>
                     </a>
@@ -146,7 +145,7 @@ export default function TopicView({
                           ? "text-yellow-500"
                           : "text-red-500"
                       }
-                    ><span className="pl-6">
+                    ><span className="pl-10">
                       {p.difficulty}
                     </span>
                     </span>

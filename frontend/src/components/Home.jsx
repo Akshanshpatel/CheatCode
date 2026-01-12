@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate=useNavigate();
   return (
-    <section className="relative min-h-screen bg-[#18181b] overflow-hidden">
+    <section className="relative min-h-screen bg-[#202225] overflow-hidden">
       
       <div className="max-w-2xl mx-10 mt-10 p-4 relative z-10">
         <h1 className="text-lg md:text-7xl bg-clip-text text-transparent bg-linear-to-b from-neutral-200 to-neutral-600 text-center font-bold">

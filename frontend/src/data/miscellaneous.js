@@ -1,3 +1,22 @@
-export const missi=[
-
-]
+export const missi = [
+  { id: 1601, title: "Majority Element", url: "https://leetcode.com/problems/majority-element/", done: false, difficulty: "Easy" },
+  { id: 1602, title: "Majority Element II", url: "https://leetcode.com/problems/majority-element-ii/", done: false, difficulty: "Medium" },
+  { id: 1603, title: "Find Pivot Index", url: "https://leetcode.com/problems/find-pivot-index/", done: false, difficulty: "Easy" },
+  { id: 1604, title: "Product of Array Except Self", url: "https://leetcode.com/problems/product-of-array-except-self/", done: false, difficulty: "Medium" },
+  { id: 1605, title: "Encode and Decode Strings", url: "https://leetcode.com/problems/encode-and-decode-strings/", done: false, difficulty: "Medium" },
+  { id: 1606, title: "Game of Life", url: "https://leetcode.com/problems/game-of-life/", done: false, difficulty: "Medium" },
+  { id: 1607, title: "Container With Most Water", url: "https://leetcode.com/problems/container-with-most-water/", done: false, difficulty: "Medium" },
+  { id: 1608, title: "Find All Numbers Disappeared in an Array", url: "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/", done: false, difficulty: "Easy" },
+  { id: 1609, title: "First Missing Positive", url: "https://leetcode.com/problems/first-missing-positive/", done: false, difficulty: "Hard" },
+  { id: 1610, title: "Spiral Matrix", url: "https://leetcode.com/problems/spiral-matrix/", done: false, difficulty: "Medium" },
+  { id: 1611, title: "Set Mismatch", url: "https://leetcode.com/problems/set-mismatch/", done: false, difficulty: "Easy" },
+  { id: 1612, title: "Find Duplicate File in System", url: "https://leetcode.com/problems/find-duplicate-file-in-system/", done: false, difficulty: "Medium" },
+  { id: 1613, title: "Random Pick Index", url: "https://leetcode.com/problems/random-pick-index/", done: false, difficulty: "Medium" },
+  { id: 1614, title: "Insert Interval", url: "https://leetcode.com/problems/insert-interval/", done: false, difficulty: "Medium" },
+  { id: 1615, title: "Merge Intervals", url: "https://leetcode.com/problems/merge-intervals/", done: false, difficulty: "Medium" },
+  { id: 1616, title: "Meeting Rooms II", url: "https://leetcode.com/problems/meeting-rooms-ii/", done: false, difficulty: "Medium" },
+  { id: 1617, title: "Sort Colors", url: "https://leetcode.com/problems/sort-colors/", done: false, difficulty: "Medium" },
+  { id: 1618, title: "K-diff Pairs in an Array", url: "https://leetcode.com/problems/k-diff-pairs-in-an-array/", done: false, difficulty: "Medium" },
+  { id: 1619, title: "Find the Celebrity", url: "https://leetcode.com/problems/find-the-celebrity/", done: false, difficulty: "Medium" },
+  { id: 1620, title: "Top K Frequent Elements", url: "https://leetcode.com/problems/top-k-frequent-elements/", done: false, difficulty: "Medium" },
+];

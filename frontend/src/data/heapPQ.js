@@ -1,3 +1,30 @@
-export const heapPQ=[
-    
-]
+export const heapPQ = [
+  { id: 701, title: "Kth Largest Element In a Stream", url: "https://leetcode.com/problems/kth-largest-element-in-a-stream/", done: false, difficulty: "Easy" },
+  { id: 702, title: "Last Stone Weight", url: "https://leetcode.com/problems/last-stone-weight/", done: false, difficulty: "Easy" },
+  { id: 703, title: "Take Gifts From the Richest Pile", url: "https://leetcode.com/problems/take-gifts-from-the-richest-pile/", done: false, difficulty: "Easy" },
+  { id: 704, title: "Final Array State After K Multiplication Operations I", url: "https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/", done: false, difficulty: "Easy" },
+  { id: 705, title: "K Closest Points to Origin", url: "https://leetcode.com/problems/k-closest-points-to-origin/", done: false, difficulty: "Medium" },
+  { id: 706, title: "Kth Largest Element In An Array", url: "https://leetcode.com/problems/kth-largest-element-in-an-array/", done: false, difficulty: "Medium" },
+  { id: 707, title: "Task Scheduler", url: "https://leetcode.com/problems/task-scheduler/", done: false, difficulty: "Medium" },
+  { id: 708, title: "Design Twitter", url: "https://leetcode.com/problems/design-twitter/", done: false, difficulty: "Medium" },
+  { id: 709, title: "Least Number of Unique Integers after K Removal", url: "https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/", done: false, difficulty: "Medium" },
+  { id: 710, title: "Furthest Building You Can Reach", url: "https://leetcode.com/problems/furthest-building-you-can-reach/", done: false, difficulty: "Medium" },
+  { id: 711, title: "Minimize Deviation in Array", url: "https://leetcode.com/problems/minimize-deviation-in-array/", done: false, difficulty: "Hard" },
+  { id: 712, title: "Maximum Subsequence Score", url: "https://leetcode.com/problems/maximum-subsequence-score/", done: false, difficulty: "Medium" },
+  { id: 713, title: "Single Threaded CPU", url: "https://leetcode.com/problems/single-threaded-cpu/", done: false, difficulty: "Medium" },
+  { id: 714, title: "Seat Reservation Manager", url: "https://leetcode.com/problems/seat-reservation-manager/", done: false, difficulty: "Medium" },
+  { id: 715, title: "Process Tasks Using Servers", url: "https://leetcode.com/problems/process-tasks-using-servers/", done: false, difficulty: "Medium" },
+  { id: 716, title: "Find The Kth Largest Integer In The Array", url: "https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/", done: false, difficulty: "Medium" },
+  { id: 717, title: "Reorganize String", url: "https://leetcode.com/problems/reorganize-string/", done: false, difficulty: "Medium" },
+  { id: 718, title: "Longest Happy String", url: "https://leetcode.com/problems/longest-happy-string/", done: false, difficulty: "Medium" },
+  { id: 719, title: "Car Pooling", url: "https://leetcode.com/problems/car-pooling/", done: false, difficulty: "Medium" },
+  { id: 720, title: "Range Sum of Sorted Subarray Sums", url: "https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/", done: false, difficulty: "Medium" },
+  { id: 721, title: "Minimum Cost to Connect Sticks", url: "https://leetcode.com/problems/minimum-cost-to-connect-sticks/", done: false, difficulty: "Medium" },
+  { id: 722, title: "Find Median From Data Stream", url: "https://leetcode.com/problems/find-median-from-data-stream/", done: false, difficulty: "Hard" },
+  { id: 723, title: "Maximum Performance of a Team", url: "https://leetcode.com/problems/maximum-performance-of-a-team/", done: false, difficulty: "Hard" },
+  { id: 724, title: "IPO", url: "https://leetcode.com/problems/ipo/", done: false, difficulty: "Hard" },
+  { id: 725, title: "Minimum Cost to Hire K Workers", url: "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/", done: false, difficulty: "Hard" },
+  { id: 726, title: "Number of Flowers in Full Bloom", url: "https://leetcode.com/problems/number-of-flowers-in-full-bloom/", done: false, difficulty: "Hard" },
+  { id: 727, title: "Constrained Subsequence Sum", url: "https://leetcode.com/problems/constrained-subsequence-sum/", done: false, difficulty: "Hard" },
+  { id: 728, title: "Find Building Where Alice and Bob Can Meet", url: "https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/", done: false, difficulty: "Hard" },
+];

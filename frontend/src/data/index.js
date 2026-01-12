@@ -13,6 +13,7 @@ import { stackQueue} from "@/data/stackQueue";
 import { tree} from "@/data/tree";
 import { missi} from "@/data/miscellaneous";
 import { recursi} from "@/data/recursion";
+import { greedy} from "@/data/greedy";
 
 export const topics = [
      {
@@ -37,7 +38,7 @@ export const topics = [
       },
       {
         id: "stak-queue",
-        title: "Stack & Queue",
+        title: "Stack",
         problems: stackQueue,
       },
       {
@@ -45,6 +46,11 @@ export const topics = [
         title: "Recursion & Backtracking",
         problems: recursi,
       },
+      {
+    id: "heap-pq",
+    title: "Heap & Priority queue",
+    problems: heapPQ,
+  },
       {
         id: "ll",
         title: "Linked List",
@@ -66,15 +72,16 @@ export const topics = [
     problems: twoDim,
   },
   {
+    id: "greedy",
+    title: "Greedy",
+    problems: greedy,
+  },
+  {
     id: "bit-manipulation",
     title: "Bit Manipulation",
     problems: bit,
   },
-  {
-    id: "heap-pq",
-    title: "Heap & Priority queue",
-    problems: heapPQ,
-  },
+  
   {
     id: "graph",
     title: "Graph",
@@ -82,7 +89,7 @@ export const topics = [
   },
   {
     id: "math",
-    title: "Math",
+    title: "Math & Geometry",
     problems: math,
   },
   {

@@ -6,7 +6,7 @@ const Academic = () => {
   return (
     <div>  
     <Navbar/>
-    <main className='bg-[#18181b] min-h-screen overflow-x-hidden'>
+    <main className='bg-[#202225] min-h-screen overflow-x-hidden'>
 
     </main> 
     <Footer/>

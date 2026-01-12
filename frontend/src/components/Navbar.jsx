@@ -58,7 +58,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-[#18181b]">
+    <header className="bg-[#202225]">
       <nav className="flex items-center p-5 font-bold h-20 text-white ">
 
           <Link to="/">
