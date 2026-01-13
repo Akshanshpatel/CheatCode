@@ -10,7 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { app } from "../lib/firebase";
+import { app } from "@/lib/firebase";
 
 const Navbar = () => {
   const [isDark, setDark] = useState(false);

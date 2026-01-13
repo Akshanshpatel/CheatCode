@@ -5,14 +5,14 @@ import Systum from "@/components/Systum.jsx";
 
 import { ArrowRight, } from "lucide-react";
 
-import { auth } from "../lib/firebase";
+import { auth } from "@/lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   createUserIfNotExists,
   getUserProgress,
   toggleSolved,
   toggleStarred,
-} from "../lib/userProgress";
+} from "@/lib/userProgress";
 
 import { topics } from "@/data";
 import { searchQuestions } from "@/utils/searchBox";

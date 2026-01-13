@@ -1,5 +1,5 @@
 import { doc, getDoc, setDoc, updateDoc, increment,deleteField } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import { db } from "@/lib/firebase";
 
 
 
