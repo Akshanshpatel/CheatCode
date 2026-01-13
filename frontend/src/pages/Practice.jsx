@@ -5,7 +5,7 @@ import Systum from "@/components/Systum.jsx";
 
 import { ArrowRight, } from "lucide-react";
 
-import { auth } from "../firebase.js";
+import { auth } from "../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   createUserIfNotExists,
