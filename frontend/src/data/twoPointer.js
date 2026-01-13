@@ -216,7 +216,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 228,
         title:"Divide Players Into Teams of Equal Skill",
         url:"https://leetcode.com/problems/divide-players-into-teams-of-equal-skill/",
         
@@ -224,7 +224,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 229,
         title:"Boats to Save People ",
         url:"https://leetcode.com/problems/boats-to-save-people/",
         
@@ -232,7 +232,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 230,
         title:"K-th Symbol in Grammar",
         url:"https://leetcode.com/problems/k-th-symbol-in-grammar/",
         
@@ -240,7 +240,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 231,
         title:"Minimum Time To Make Rope Colorful",
         url:"https://leetcode.com/problems/minimum-time-to-make-rope-colorful/",
         
@@ -248,7 +248,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 232,
         title:"Rearrange Array Elements by Sign",
         url:"https://leetcode.com/problems/rearrange-array-elements-by-sign/",
         
@@ -256,7 +256,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 233,
         title:"Bag of Tokens",
         url:"https://leetcode.com/problems/bag-of-tokens/",
         
@@ -264,7 +264,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 234,
         title:"Minimum Length of String after Deleting Similar Ends",
         url:"https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/",
         
@@ -272,7 +272,7 @@ export const twoPoint=[
         difficulty:"Medium",
     },
     {
-        id: 227,
+        id: 235,
         title:"Sentence Similarity III",
         url:"https://leetcode.com/problems/sentence-similarity-iii/",
         

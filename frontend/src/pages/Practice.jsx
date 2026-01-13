@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Systum from "@/components/Systum.jsx";
 
 import { ArrowRight, } from "lucide-react";
 
@@ -26,6 +27,8 @@ const Practice = () => {
   const [query, setQuery] = useState("");
   const isSearching = query.trim().length > 0;
   const results = isSearching ? searchQuestions(query) : [];
+
+  const [activeTopic, setActiveTopic] = useState("dsa");
 
   /* =======================
      TOPIC STATE
@@ -73,15 +76,16 @@ const Practice = () => {
 
       <main className="bg-[#202225] min-h-screen overflow-x-hidden">
         {/* HEADER */}
-        <section className="min-w-screen min-h-45 flex">
-          <h2 className="flex text-white text-xl font-bold pl-30 pt-15">
+        <section className="min-w-screen min-h-45 flex items-center justify-center">
+          {/* <h2 className="flex text-white text-xl font-bold pl-30 ">
             Progress
             <span className="pl-5">
               <ArrowRight />
             </span>
-          </h2>
+          </h2> */}
+          <h1 className="text-white font-bold underline underline-offset-4">Progress Bar Available Soon 😔</h1>
 
-          <img src="/doit.gif" alt="" className="absolute right-23 h-50 w-50"/>
+          <img src="/doit.gif" alt="" className="h-50 w-50 ml-50 rounded-full object-cover"/>
 
         </section>
 
@@ -89,14 +93,17 @@ const Practice = () => {
 
         {/* TOOLBAR */}
         <section> 
-        <ToolBar value={query} onChange={(e) => setQuery(e.target.value)}/>
+        <ToolBar value={query} onChange={(e) => setQuery(e.target.value)} 
+          activeTopic={activeTopic}
+          setActiveTopic={setActiveTopic}/>
         </section>
 
         {/* CONTENT */}
         <section className="w-11/12 mx-auto mt-6">
+
           {isSearching ? (
             <SearchResults results={results} />
-          ) : (
+          ) :activeTopic==="dsa" ? (
             <TopicView
               topics={topics}
               topicProblems={topicProblems}
@@ -107,8 +114,10 @@ const Practice = () => {
               toggleSolved={toggleSolved}
               toggleStarred={toggleStarred}
             />
-          )}
+          ):<Systum/>}
+
         </section>
+
       </main>
 
       <Footer />

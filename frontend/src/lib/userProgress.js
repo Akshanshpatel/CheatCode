@@ -20,7 +20,7 @@ export async function createUserIfNotExists(user) {
 // Mark a problem solved
 export async function toggleSolved(uid, problemId, isSolved) {
   const ref = doc(db, "users", uid);
-
+  
   if (isSolved) {
     // UNSOLVE → decrement
     await updateDoc(ref, {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Sun, Moon, User } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 
 import {
   GoogleAuthProvider,
@@ -67,7 +67,7 @@ const Navbar = () => {
           </Link>
                                                                                 
         <ul className="flex gap-20 ml-50">
-          <li><Link to="/practice">Practice (DSA)</Link></li>
+          <li><Link to="/practice">Practice</Link></li>
           <li><Link to="/academic">Academic</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>

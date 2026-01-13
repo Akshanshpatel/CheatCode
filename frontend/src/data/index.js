@@ -14,6 +14,7 @@ import { tree} from "@/data/tree";
 import { missi} from "@/data/miscellaneous";
 import { recursi} from "@/data/recursion";
 import { greedy} from "@/data/greedy";
+import { interval} from "@/data/interval";
 
 export const topics = [
      {
@@ -86,6 +87,11 @@ export const topics = [
     id: "graph",
     title: "Graph",
     problems: graph,
+  },
+  {
+    id: "interval",
+    title: "Interval",
+    problems: interval,
   },
   {
     id: "math",
