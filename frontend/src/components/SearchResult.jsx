@@ -14,7 +14,7 @@ export default function SearchResults({ results }) {
           className="bg-[#2f3136] p-3 rounded text-white flex "
         >
           <MoveRight />
-          <a href={q.url} className="hover:text-blue-400 pl-4">{q.title}</a>
+          <a href={q.url} target="_blank" className="hover:text-blue-400 pl-4">{q.title}</a>
           <span className="text-sm text-gray-400">
             {" "}— {q.topic}
           </span>

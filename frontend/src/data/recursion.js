@@ -1,5 +1,5 @@
 export const recursi = [
-  { id: 601, title: "Sum of All Subsets XOR Total", url: "https://leetcode.com/problems/sum-of-all-subset-xor-total/", done: false, difficulty: "Easy" },
+  { id: 601, title: "Sum of All Subsets XOR Total", url: "https://leetcode.com/problems/sum-of-all-subset-xor-totals/", done: false, difficulty: "Easy" },
   { id: 602, title: "Subsets", url: "https://leetcode.com/problems/subsets/", done: false, difficulty: "Medium" },
   { id: 603, title: "Combination Sum", url: "https://leetcode.com/problems/combination-sum/", done: false, difficulty: "Medium" },
   { id: 604, title: "Combination Sum II", url: "https://leetcode.com/problems/combination-sum-ii/", done: false, difficulty: "Medium" },
