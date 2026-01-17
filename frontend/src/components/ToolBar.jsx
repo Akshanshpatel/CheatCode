@@ -15,53 +15,30 @@ export default function ToolBar({
   const [batman, setbatman] = useState(false);
 
   return (
-    <section
-      className="
-        mt-10 mx-auto w-full sm:w-10/12
-        bg-[#2f3136] rounded-lg
-        px-4 sm:px-6 py-4
-        flex flex-col sm:flex-row
-        gap-4 sm:gap-0
-        sm:items-center sm:justify-between
-      "
-    >
-      {/* LEFT */}
-      <div
-        className="
-          relative flex flex-col sm:flex-row
-          gap-4 sm:gap-10
-          w-full sm:w-auto
-        "
-      >
-        {/* SEARCH */}
-        <div className="relative w-full sm:w-80">
-          <Search
-            size={18}
-            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-          />
-          <input
-            type="text"
-            placeholder="Search"
-            value={value}
-            onChange={onChange}
-            className="
-              w-full pl-10 py-2 rounded
-              bg-[#202225] text-white
-              focus:outline-none
-            "
-          />
-        </div>
+    <section className="mt-10 mx-auto w-10/12 bg-[#2f3136] rounded-lg px-6 py-4 flex items-center justify-between">
+      
+      {/* Left part */}
+      <div className="relative w-100 flex gap-5 sm:gap-10">
 
-        {/* DSA ICON */}
-        <div className="relative flex justify-center sm:justify-start">
-          {/* Tooltip – desktop only */}
+        
+        {/* Search */}
+        <Search
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-[18px] sm:h-[18px]"
+        />
+
+        <input
+          type="text"
+          placeholder="Search"
+          value={value}
+          onChange={onChange}
+          className="w-full pl-9 sm:pl-10 py-1.5 sm:py-2 rounded bg-[#202225] text-white text-sm sm:text-base focus:outline-none"
+        />
+
+        {/* Superman */}
+        <div className="relative flex justify-center">
           <div
-            className={`
-              hidden sm:block
-              absolute -top-11 z-20
-              rounded-md bg-neutral-900
-              px-3 py-1.5 text-xs font-medium text-white
-              transition-all duration-200
+            className={`absolute -top-11 z-20 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white
+              transition-all duration-200 ease-out
               ${superman ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
             `}
           >
@@ -71,27 +48,19 @@ export default function ToolBar({
 
           <img
             src="/superman.svg"
-            className={`
-              w-20 sm:w-30 cursor-pointer
-              transition-opacity duration-200
-              ${activeTopic === "dsa" ? "opacity-100" : "opacity-40"}
-            `}
+            className={`relative h-fit w-36 sm:w-30 cursor-pointer transition-opacity duration-200
+              ${activeTopic === "dsa" ? "opacity-100" : "opacity-40"}`}
             onClick={() => setActiveTopic("dsa")}
             onMouseEnter={() => setsuperman(true)}
             onMouseLeave={() => setsuperman(false)}
           />
         </div>
 
-        {/* SYSTEM DESIGN ICON */}
-        <div className="relative flex justify-center sm:justify-start">
-          {/* Tooltip – desktop only */}
+        {/* Batman */}
+        <div className="relative flex justify-center">
           <div
-            className={`
-              hidden sm:block
-              absolute -top-14 z-20
-              rounded-md bg-neutral-900
-              px-3 py-1.5 text-xs font-medium text-white
-              transition-all duration-200
+            className={`absolute -top-14 z-20 rounded-md bg-neutral-900 px-3 py-1.5 text-xs font-medium text-white
+              transition-all duration-200 ease-out
               ${batman ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
             `}
           >
@@ -101,11 +70,8 @@ export default function ToolBar({
 
           <img
             src="/batman5.svg"
-            className={`
-              w-20 sm:w-30 cursor-pointer
-              transition-opacity duration-200
-              ${activeTopic === "system" ? "opacity-100" : "opacity-40"}
-            `}
+            className={`relative h-fit w-36 sm:w-30 cursor-pointer transition-opacity duration-200
+              ${activeTopic === "system" ? "opacity-100" : "opacity-40"}`}
             onClick={() => setActiveTopic("system")}
             onMouseEnter={() => setbatman(true)}
             onMouseLeave={() => setbatman(false)}
@@ -113,16 +79,13 @@ export default function ToolBar({
         </div>
       </div>
 
-      {/* RIGHT */}
-      <div className="flex gap-3 justify-center sm:justify-end">
-        <button className="h-10 w-10 flex items-center justify-center rounded-full bg-[#202225]">
-          <CircleQuestionMark className="text-white" />
-        </button>
+      {/* Right part */}
+      
+        
 
-        <button className="h-10 w-10 flex items-center justify-center rounded-md bg-[#202225] hover:bg-red-500">
-          <Trash2 className="text-white" />
+        <button className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center rounded-md bg-[#202225] hover:bg-red-500">
+          <Trash2 className="text-white cursor-pointer w-4 h-4 sm:w-5 sm:h-5" />
         </button>
-      </div>
     </section>
   );
 }
