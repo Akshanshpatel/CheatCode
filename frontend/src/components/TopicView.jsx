@@ -38,38 +38,46 @@ export default function TopicView({
         return (
           <div key={topic.id} className="mb-5">
             {/* HEADER */}
-            <button
-              onClick={() => toggleTopic(topic.id)}
-              className="mx-auto flex w-9/12 h-12 cursor-pointer bg-[#2f3136] text-white
-           font-bold rounded-lg px-6 py-4 items-center
-           border border-white/10 hover:border-white/70
-           transition-colors duration-200"
-            >
-              <ChevronDown
-                className={`transition-transform ${
-                  open ? "rotate-180" : ""
-                }`}
-              />
+           <button
+                onClick={() => toggleTopic(topic.id)}
+                className="
+                  mx-auto w-full sm:w-9/12
+                  cursor-pointer bg-[#2f3136] text-white
+                  font-bold rounded-lg
+                  px-4 sm:px-6 py-3
+                  flex flex-col sm:flex-row
+                  sm:items-center gap-2
+                  border border-white/10 hover:border-white/70
+                  transition-colors duration-200
+                "
+              >
+                <div className="flex items-center w-full min-w-0">
+                  <ChevronDown
+                    className={`transition-transform ${
+                      open ? "rotate-180" : ""
+                    }`}
+                  />
+                  <span className="ml-3 truncate">{topic.title}</span>
+                  <span className="ml-auto text-sm">
+                    {solvedCount}/{totalCount}
+                  </span>
+                </div>
 
-              <span className="ml-3">{topic.title}</span>
+                {/* Progress bar */}
+                <div className="w-full sm:w-40 h-2 bg-gray-600 overflow-hidden rounded">
+                  <div
+                    className="h-full bg-emerald-500"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
+              </button>
 
-              <span className="ml-auto pr-5">
-                {solvedCount}/{totalCount}
-              </span>
-
-              <div className="w-40 h-2 bg-gray-600 overflow-hidden rounded">
-                <div
-                  className="h-full bg-emerald-500"
-                  style={{ width: `${progressPercent}%` }}
-                />
-              </div>
-            </button>
 
             {/* ACCORDION */}
             {open && (
-              <div className="mx-auto w-full md:w-11/12 lg:w-7/12 mt-2 bg-[#393d42] rounded-lg border border-gray-700">
+              <div className="mx-auto w-full sm:w-11/12 lg:w-7/12 mt-2 bg-[#393d42] rounded-lg border border-gray-700">
                 {/* Headings */}
-                <div className="grid font-bold grid-cols-6 px-4 py-2 border-b border-gray-600 text-gray-300">
+                <div className="hidden md:grid font-bold  grid-cols-6 px-4 py-2 border-b border-gray-600 text-gray-300">
                   <span>Status</span>
                   <span>Star</span>
                   <span className="col-span-2">Problem</span>
@@ -84,6 +92,8 @@ export default function TopicView({
                     p.done ? "bg-green-900 text-white" : "text-white"}`}
                   >
                     {/* Solved */}
+                    <div className="flex md:contents gap-4">
+
                     <button 
                       onClick={async () => {
                         await toggleSolved(auth.currentUser.uid, p.id, p.done);
@@ -104,7 +114,10 @@ export default function TopicView({
                       />
                     </button>
 
+                    </div>
+
                     {/* Star */}
+                    <div className="flex md:contents gap-4">
                     <button
                       onClick={async () => {
                         await toggleStarred(auth.currentUser.uid, p.id, p.star);
@@ -124,34 +137,38 @@ export default function TopicView({
                         }`}
                       />
                     </button>
+                    </div>
 
+                    
                     {/* Problem */}
-                    <a href={p.url}
+                    <a
+                      href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="col-span-2 "
-                    > 
-                    <span className="hover:text-blue-400 ">
-                      {p.title}
-                    </span>
+                      className="md:col-span-2 min-w-0"
+                    >
+                      <span className="block wrap-break-words whitespace-normal hover:text-blue-400">
+                        {p.title}
+                      </span>
                     </a>
+
 
                     {/* Difficulty */}
                     <span
-                      className={
+                      className={`text-sm md:text-base ${
                         p.difficulty === "Easy"
                           ? "text-green-500"
                           : p.difficulty === "Medium"
                           ? "text-yellow-500"
                           : "text-red-500"
-                      }
-                    ><span className="pl-10">
-                      {p.difficulty}
-                    </span>
+                      }`}
+                    >
+                      <span className="md:pl-10">{p.difficulty}</span>
                     </span>
 
+
                     {/* Solution */}
-                    <span>Later</span>
+                    <span className="hidden">Later</span>
                   </div>
                 ))}
               </div>

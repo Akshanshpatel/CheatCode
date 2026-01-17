@@ -76,18 +76,18 @@ const Practice = () => {
 
       <main className="bg-[#202225] min-h-screen overflow-x-hidden">
         {/* HEADER */}
-        <section className="min-w-screen min-h-45 flex items-center justify-center">
-          {/* <h2 className="flex text-white text-xl font-bold pl-30 ">
-            Progress
-            <span className="pl-5">
-              <ArrowRight />
-            </span>
-          </h2> */}
-          <h1 className="text-white font-bold underline underline-offset-4">Progress Bar Available Soon 😔</h1>
+       <section className="min-w-screen min-h-45 flex flex-col sm:flex-row items-center justify-center gap-6 px-4">
+          <h1 className="text-white font-bold underline underline-offset-4 text-center sm:text-left text-sm sm:text-base">
+            Progress Bar Available Soon 😔
+          </h1>
 
-          <img src="/doit.gif" alt="" className="h-50 w-50 ml-50 rounded-full object-cover"/>
-
+          <img
+            src="/doit.gif"
+            alt=""
+            className="h-32 w-32 sm:h-50 sm:w-50 sm:ml-50 rounded-full object-cover"
+          />
         </section>
+
 
         <hr className="w-2/3 mx-auto" />
 
