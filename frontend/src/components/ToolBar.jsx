@@ -28,7 +28,7 @@ export default function ToolBar({
 
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search (No./Name)"
           value={value}
           onChange={onChange}
           className="w-full pl-9 sm:pl-10 py-1.5 sm:py-2 rounded bg-[#202225] text-white text-sm sm:text-base focus:outline-none"

@@ -168,7 +168,7 @@ export default function TopicView({
 
 
                     {/* Solution */}
-                    <span className="hidden">Later</span>
+                    <span className="">Soon</span>
                   </div>
                 ))}
               </div>

@@ -25,38 +25,11 @@ const Home = () => {
           <li className="text-sm md:text-base font-medium">
             ✨ Burned out? Reset with a Wordle break
           </li>
+          <li className="text-sm md:text-base font-medium">
+            ✨ Search question by Number or Name
+          </li>
         </ul>
-      </div>
-
-      {/* JAVA PLAYLIST CARD */}
-      <div className="max-w-xl mx-auto sm:mx-30 mt-12 p-5 bg-[#2f3136] border border-white/10 rounded-xl relative z-10">
-        <h3 className="text-white text-lg font-bold mb-2">
-          Before you start DSA 👇
-        </h3>
-
-        <p className="text-neutral-400 text-sm mb-4">
-          Don’t jump blindly into problems.  
-          Get comfortable with <span className="text-white font-medium">Java fundamentals</span> first.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <img
-            src="https://i.ytimg.com/vi/rZ41y93P2Qo/hq720.jpg"
-            alt="Java Playlist"
-            className="w-full sm:w-32 h-20 rounded-lg object-cover border border-white/10"
-          />
-
-          <a
-            href="https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-sm font-bold px-4 py-2 border border-white
-                       text-white hover:bg-white hover:text-black transition"
-          >
-            Watch Java Playlist →
-          </a>
-        </div>
-      </div>
+      </div>     
 
       {/* WORDLE BUTTON */}
       <div className="mt-10 flex justify-center sm:block">

@@ -85,7 +85,7 @@ export const answers = {
 "wader","waged","wages","wagon","waist","waits","walks","walls","waned","wanes","wants","warns","warps","wasps","waste","watch","water","watts","waves","wears","weeds","weeks","weigh","weird","wells","welsh","whale","wheat","wheel","where","which","while","whirl","white","whole","whose","widen","wider","widow","width","wimps",
 "winds","windy","wines","wings","wiped","wiper","wired","wires","wiser","wispy","witch","wives","woman","women","woods","woody","words","works","world","worms","worry","worse","worst","worth","would","wound","wrath","wrist","write","wrong","wrote","yacht","yards",
 "years","yeast","yield","young","yours","youth","yummy","zilch","zoned","zones",
-,"india","ligma","diddy","gyatt","goofy"
+,"india","ligma","diddy","gyatt","goofy","numpy","panda"
 ],
 
   answer: [
@@ -126,18 +126,18 @@ export const answers = {
     "knife",
 
     "large","laugh","layer","learn","leave","legal","level","light",
-    "limit","local","logic","loose","lucky","lunch","ligma",
+    "limit","local","logic","loose","lucky","lunch","ligma","lover",
 
     "magic","major","march","match","maybe","media","metal","model",
     "money","month","motor","mouse","mouth","movie","music",
 
-    "never","night","noise","north","novel","nurse",
+    "never","night","noise","north","novel","nurse","numpy",
 
     "ocean","order","owner",
 
     "paper","party","peace","phone","photo","piece","pilot","pitch","pizza","place",
     "plain","plane","plant","plate","point","power","press","price","prime","print",
-    "prize","proof","proud","prove",
+    "prize","proof","proud","prove","panda",
 
     "queen","quick","quiet",
 
