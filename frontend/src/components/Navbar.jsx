@@ -69,9 +69,9 @@ const Navbar = () => {
 
         {/* DESKTOP LINKS */}
         <ul className="hidden sm:flex gap-20 ml-50">
-          <li><Link to="/practice">Practice</Link></li>
-          <li><Link to="/academic">Academic</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li className="px-3 py-1 rounded-md hover:bg-white hover:text-black transition"><Link to="/practice">Practice</Link></li>
+          <li className="px-3 py-1 rounded-md hover:bg-white hover:text-black transition"><Link to="/academic">Academic</Link></li>
+          <li className="px-3 py-1 rounded-md hover:bg-white hover:text-black transition"><Link to="/about">About</Link></li>
         </ul>
 
         {/* RIGHT CONTROLS */}

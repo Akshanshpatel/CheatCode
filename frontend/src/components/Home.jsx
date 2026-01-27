@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import Snowfall from "react-snowfall";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
     <section className="relative min-h-screen bg-[#202225] overflow-hidden px-4 sm:px-0">
+      <Snowfall color="white"/>
       
       {/* HERO */}
       <div className="max-w-2xl mx-auto sm:mx-10 mt-10 p-4 relative z-10">
@@ -14,19 +16,22 @@ const Home = () => {
 
         <p className="text-neutral-400 max-w-xl mx-auto my-4 text-sm text-center">
           A focused practice hub to master DSA — without distractions.
-        </p>
+        </p>  
 
+        <br />
         <ul className="mt-6 space-y-3 text-neutral-400 text-center sm:text-left sm:pl-25">
-          <li className="text-sm md:text-base font-medium">✨ Sign-in first to track progress</li>
-          <li className="text-sm md:text-base font-medium">✨ Bookmark this site</li>
-          <li className="text-sm md:text-base font-medium">
-            ✨ Practice consistently — progress compounds
-          </li>
+          <li className="text-sm md:text-base font-medium">✨ Bookmark this site & Sign-in to track progress</li>
+          <br />          
           <li className="text-sm md:text-base font-medium">
             ✨ Burned out? Reset with a Wordle break
           </li>
+          <br />
           <li className="text-sm md:text-base font-medium">
-            ✨ Search question by Number or Name
+            ✨ Search LeetCode question by Number or Name
+          </li>
+          <br />
+          <li className="text-sm md:text-base font-medium">
+            ✨ If some Network Issue Try --  <a href="https://one.one.one.one/" className="text-orange-500 ">WARP</a>
           </li>
         </ul>
       </div>     
