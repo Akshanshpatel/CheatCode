@@ -1,19 +1,18 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
-
-
+import ThemeContext from "./utils/ThemeContext";
 
 function App() {
-
   
-
   return (
-    <div className="min-h-screen bg-[#18181b]">
+  <ThemeContext >
+  <div className="min-h-screen">
    <Navbar/>    
    <Home/>
    <Footer/>
    </div>
+  </ThemeContext>  
   );
 }
 

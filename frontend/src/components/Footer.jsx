@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-[#202225] w-full pb-10">
-      <hr className="w-2/3 mx-auto mb-6 border-white" />
+    <div className="bg-(--bg-color) w-full pb-10">
+      <hr className="w-2/3 mx-auto mb-6 border-(--secondary-color)" />
 
       <div className="flex flex-col items-center px-4">
         <h4 className="font-bold text-white text-lg mb-4">

@@ -8,7 +8,7 @@ import Practice from './pages/Practice'
 import NotFound from './pages/NotFound'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Wordle from './pages/Wordle'
-
+import ThemeProvider from './utils/ThemeContext'
 
 const GoogleAuthWrapper=()=>{
     return(
@@ -29,5 +29,7 @@ const router=createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
+    <ThemeProvider>
     <RouterProvider router={router}/> 
+    </ThemeProvider>
 )

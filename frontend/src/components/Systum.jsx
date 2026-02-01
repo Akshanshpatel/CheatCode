@@ -7,12 +7,12 @@ const Systum = () => {
         Interview Questions
       </h3>
 
-      <div className="mx-auto mt-10 w-full sm:w-8/12 mb-20 rounded-xl bg-[#2b2f33] overflow-hidden text-white">
+      <div className="mx-auto mt-10 w-full sm:w-8/12 mb-20 rounded-xl bg-(--box-qt) overflow-hidden text-(--font-color)">
         
         {/* Header – desktop only */}
         <div className="hidden sm:grid grid-cols-2 px-10 py-4 font-semibold border-b border-neutral-600">
           <span className="pl-20">Problem</span>
-          <span className="text-right pr-20">Difficulty</span>
+          <span className="text-right pr-10">Difficulty</span>
         </div>
 
         {/* Rows */}

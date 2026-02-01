@@ -3,7 +3,7 @@ import { Game_Word_Len } from "@/utils/words";
 
 export default function GuessRow({ correct, current = "",isSubmitted }) {
   function getTileColor(letter, index) {
-    if(!isSubmitted)return "bg-gray-700"
+    if(!isSubmitted)return "bg-(--bg-color)"
     if (!letter) return "bg-gray-700";
     if (correct[index] === letter) return "bg-green-600";
     if (correct.includes(letter)) return "bg-yellow-500";
@@ -11,7 +11,7 @@ export default function GuessRow({ correct, current = "",isSubmitted }) {
   }
 
   return (
-    <div className="text-white flex flex-row gap-2">
+    <div className="text-(--font-color) flex flex-row gap-2">
       {Array(Game_Word_Len)
         .fill("")
         .map((_, i) => {

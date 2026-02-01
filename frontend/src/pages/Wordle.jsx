@@ -139,7 +139,7 @@ const [error, setError] = useState("");
   return (
   <div>
     <Navbar/>
-    <div className="flex w-full justify-center min-h-screen bg-[#18181b] ">
+    <div className="flex w-full justify-center min-h-screen bg-(--bg-color) ">
       <div className="flex flex-col items-center gap-6 max-w-md ml-24">
         <h1 className="text-lg md:text-5xl pb-4 mt-8 bg-clip-text text-transparent bg-linear-to-b from-neutral-200 to-neutral-600 text-center font-bold">
           Wordle Game
@@ -178,7 +178,7 @@ const [error, setError] = useState("");
       </a>
     </span>
   ) : (
-    <span>
+    <span className="text-(--font-color)">
        <strong>You Lose!</strong> 🥀<br />
       Correct word was: <span className="text-red-400">{correctWord}</span>
     </span>

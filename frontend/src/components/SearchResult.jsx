@@ -11,7 +11,7 @@ export default function SearchResults({ results }) {
       {results.map(q => (
         <li
           key={q.id}
-          className="bg-[#2f3136] p-3 rounded text-white flex "
+          className="bg-(--bg-color) p-3 rounded text-white flex "
         >
           <MoveRight />
           <a href={q.url} target="_blank" className="hover:text-blue-400 pl-4">{q.title}</a>

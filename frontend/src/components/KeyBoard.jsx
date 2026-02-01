@@ -9,7 +9,7 @@ const ROWS = [
 export default function Keyboard({ onKeyPress, letterStates = {} ,shake=false,}) {
   const getKeyClass = (key) => {
     if (key === "enter" || key === "back") {
-      return "px-4 bg-gray-700";
+      return "px-4 bg-(--bg-color)";
     }
 
     const state = letterStates[key];
@@ -18,7 +18,7 @@ export default function Keyboard({ onKeyPress, letterStates = {} ,shake=false,})
     if (state === "yellow") return "bg-yellow-500";
     if (state === "gray") return "bg-gray-500";
 
-    return "bg-gray-700";
+    return "bg-(--bg-color)";
   };
 
   return (
@@ -33,8 +33,9 @@ export default function Keyboard({ onKeyPress, letterStates = {} ,shake=false,})
                 h-12 min-w-10
                 flex items-center justify-center
                 rounded
-                text-white font-semibold uppercase
+                text-(--font-color) font-semibold uppercase
                 ${getKeyClass(key)}
+                border
                 hover:brightness-110
                 transition
               `}
