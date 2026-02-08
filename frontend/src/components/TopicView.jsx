@@ -110,7 +110,7 @@ export default function TopicView({
                     border-b border-(--font-color)/10
                     ${
                       p.done
-                        ? "bg-green-800 text-white"
+                        ? "bg-(--accordian) text-white"
                         : "text-(--font-color)"
                     }
                   `}
@@ -168,7 +168,7 @@ export default function TopicView({
                     rel="noopener noreferrer"
                     className="md:col-span-2 min-w-0"
                   >
-                    <span className="block whitespace-normal hover:text-(--primary-color)">
+                    <span className="block whitespace-normal text-(--text) font-bold hover:text-(--primary-color)">
                       {p.title}
                     </span>
                   </a>
@@ -178,10 +178,10 @@ export default function TopicView({
                     <span
                       className={`md:pl-10 ${
                         p.difficulty === "Easy"
-                          ? "text-green-500"
+                          ? "text-green-700 font-semibold"
                           : p.difficulty === "Medium"
-                          ? "text-yellow-500"
-                          : "text-red-500"
+                          ? "text-yellow-500 font-semibold"
+                          : "text-red-500 font-semibold"
                       }`}
                     >
                       {p.difficulty}

@@ -98,7 +98,7 @@ const Navbar = () => {
             {!user ? (
               <button
                 onClick={() => signInWithPopup(auth, googleProvider)}
-                className="px-4 py-2 rounded hover:bg-(--secondary-color) transition"
+                className="px-4 py-2 rounded hover:bg-(--secondary-color) transition cursor-pointer"
               >
                 Sign in
               </button>

@@ -15,6 +15,7 @@ import { missi} from "@/data/miscellaneous";
 import { recursi} from "@/data/recursion";
 import { greedy} from "@/data/greedy";
 import { interval} from "@/data/interval";
+import { sql} from "@/data/sql";
 
 export const topics = [
      {
@@ -102,5 +103,10 @@ export const topics = [
     id: "missi",
     title: "Miscellaneous ",
     problems: missi,
+  },
+  {
+    id: "sql",
+    title: "SQL ",
+    problems: sql,
   },
 ];
