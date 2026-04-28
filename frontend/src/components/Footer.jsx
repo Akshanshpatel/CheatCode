@@ -30,7 +30,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://leetcode.com/u/_aks_patel/"
+            href="https://leetcode.com/u/__aks_patel/"
             className="hover:text-blue-300 transition"
             target="_blank"
           >

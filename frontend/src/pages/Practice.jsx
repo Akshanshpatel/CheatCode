@@ -164,10 +164,7 @@ const Practice = () => {
             )}
           </div>
 
-          {/* 🔧 notice text */}
-          <h1 className="text-(--font-color) font-bold underline underline-offset-4 text-center sm:text-left text-sm sm:text-base">
-            Progress Bar Available Soon 😔
-          </h1>
+          
 
           {/* GIF stays unchanged */}
           <img
