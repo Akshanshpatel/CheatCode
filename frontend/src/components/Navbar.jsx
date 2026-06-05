@@ -70,7 +70,7 @@ const Navbar = () => {
 
         {/* DESKTOP LINKS */}
         <ul className="hidden sm:flex gap-20 ml-50">
-          {["practice", "academic", "about"].map((path) => (
+          {["practice", "academic"].map((path) => (
             <li
               key={path}
               className="px-3 py-1 rounded-md hover:bg-(--secondary-color) hover:text-white transition"
