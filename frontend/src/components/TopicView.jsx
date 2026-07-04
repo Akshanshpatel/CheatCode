@@ -1,10 +1,16 @@
+import { useState, useRef } from "react";
 import {
   ChevronDown,
   SquareCheckBig,
   Star,
+  X,
 } from "lucide-react";
-
-
+import {
+  GoogleAuthProvider,
+  signInWithCredential,
+} from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function TopicView({
   topics,
@@ -12,15 +18,79 @@ export default function TopicView({
   openMap,
   setOpenMap,
   setTopicProblems,
-  auth={auth},
-  toggleSolved={toggleSolved},
-  toggleStarred={toggleStarred}
+  user,
+  toggleSolved,
+  toggleStarred,
 }) {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authError, setAuthError] = useState(null);
+  const pendingActionRef = useRef(null);
+
   const toggleTopic = (id) => {
     setOpenMap(prev => ({
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  const executeToggle = async (uid, problemId, currentDone, topicId, isStar) => {
+    const field = isStar ? "star" : "done";
+    if (isStar) {
+      await toggleStarred(uid, problemId, currentDone);
+    } else {
+      await toggleSolved(uid, problemId, currentDone);
+    }
+    setTopicProblems((prev) => ({
+      ...prev,
+      [topicId]: prev[topicId].map((x) =>
+        x.id === problemId ? { ...x, [field]: !x[field] } : x
+      ),
+    }));
+  };
+
+  const handleToggle = (p, topicId, isStar) => {
+    const field = isStar ? "star" : "done";
+
+    if (!user) {
+      pendingActionRef.current = { problemId: p.id, currentDone: p[field], topicId, isStar };
+      setShowAuthModal(true);
+      setAuthError(null);
+      return;
+    }
+
+    executeToggle(user.uid, p.id, p[field], topicId, isStar).catch((err) => {
+      console.error("Failed to update progress:", err);
+    });
+  };
+
+  const signInInProgressRef = useRef(false);
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    if (signInInProgressRef.current) return;
+    signInInProgressRef.current = true;
+    try {
+      const { credential } = credentialResponse;
+      const firebaseCredential = GoogleAuthProvider.credential(credential);
+      const result = await signInWithCredential(auth, firebaseCredential);
+      const currentUser = result.user;
+      const action = pendingActionRef.current;
+      if (action) {
+        pendingActionRef.current = null;
+        await executeToggle(currentUser.uid, action.problemId, action.currentDone, action.topicId, action.isStar);
+        setShowAuthModal(false);
+        setAuthError(null);
+      }
+    } catch (err) {
+      console.error("Sign-in failed:", err);
+      setAuthError("Sign-in failed. Please try again.");
+    } finally {
+      signInInProgressRef.current = false;
+    }
+  };
+
+  const handleGoogleError = () => {
+    if (signInInProgressRef.current) return;
+    setAuthError("Sign-in failed. Please try again.");
   };
 
   return (
@@ -118,15 +188,7 @@ export default function TopicView({
                   {/* Solved */}
                   <div className="flex md:contents gap-4">
                     <button
-                      onClick={async () => {
-                        await toggleSolved(auth.currentUser.uid, p.id, p.done);
-                        setTopicProblems((prev) => ({
-                          ...prev,
-                          [topic.id]: prev[topic.id].map((x) =>
-                            x.id === p.id ? { ...x, done: !x.done } : x
-                          ),
-                        }));
-                      }}
+                      onClick={() => handleToggle(p, topic.id, false)}
                     >
                       <SquareCheckBig
                         className={`w-6 h-6 cursor-pointer ${
@@ -141,15 +203,7 @@ export default function TopicView({
                   {/* Star */}
                   <div className="flex md:contents gap-4">
                     <button
-                      onClick={async () => {
-                        await toggleStarred(auth.currentUser.uid, p.id, p.star);
-                        setTopicProblems((prev) => ({
-                          ...prev,
-                          [topic.id]: prev[topic.id].map((x) =>
-                            x.id === p.id ? { ...x, star: !x.star } : x
-                          ),
-                        }));
-                      }}
+                      onClick={() => handleToggle(p, topic.id, true)}
                     >
                       <Star
                         className={`w-6 h-6 cursor-pointer ${
@@ -198,6 +252,48 @@ export default function TopicView({
 
         );
       })}
+
+      {/* Auth Modal */}
+      {showAuthModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/60"
+            onClick={() => {
+              setShowAuthModal(false);
+              pendingActionRef.current = null;
+              setAuthError(null);
+            }}
+          />
+          <div className="relative bg-(--bg-color) border border-(--font-color)/20 rounded-lg p-6 w-80 shadow-xl">
+            <button
+              onClick={() => {
+                setShowAuthModal(false);
+                pendingActionRef.current = null;
+                setAuthError(null);
+              }}
+              className="absolute top-2 right-2 text-(--font-color) cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <p className="text-(--font-color) text-sm mb-4">
+              Please sign in to track your progress.
+            </p>
+            {authError && (
+              <p className="text-red-500 text-xs mb-3">{authError}</p>
+            )}
+            <div className="flex justify-center">
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+                theme="outline"
+                size="large"
+                text="continue_with"
+                shape="rectangular"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

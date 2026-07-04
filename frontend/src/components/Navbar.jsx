@@ -5,11 +5,12 @@ import { ThemeContext } from "../utils/ThemeContext";
 import {
   GoogleAuthProvider,
   getAuth,
-  signInWithPopup,
+  signInWithCredential,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
 import { app } from "@/lib/firebase";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -17,32 +18,33 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
+  const [avatarError, setAvatarError] = useState(false);
   const menuRef = useRef(null);
 
   const auth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
 
-  // Google Sign-In
+  // Google Sign-In via GIS
 
- const signInGoogle = async () => {
+  const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      const { credential } = credentialResponse;
+      const firebaseCredential = GoogleAuthProvider.credential(credential);
+      await signInWithCredential(auth, firebaseCredential);
       setOpen(false);
     } catch (err) {
       console.error(err);
     }
   };
 
-  // Sign out
-  const handleSignOut = async () => {
-    await signOut(auth);
-    setOpen(false);
+  const handleGoogleError = () => {
+    console.error("Google Sign-In failed");
   };
 
   // Listen to auth state
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setAvatarError(false);
     });
     return () => unsub();
   }, [auth]);
@@ -96,20 +98,32 @@ const Navbar = () => {
           {/* AUTH */}
           <div className="relative z-10" ref={menuRef}>
             {!user ? (
-              <button
-                onClick={() => signInWithPopup(auth, googleProvider)}
-                className="px-4 py-2 rounded hover:bg-(--secondary-color) transition cursor-pointer"
-              >
-                Sign in
-              </button>
+              <GoogleLogin
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+                theme="outline"
+                size="medium"
+                text="continue_with"
+                shape="rectangular"
+              />
             ) : (
               <>
-                <img
-                  src={user.photoURL}
-                  alt="profile"
-                  className="h-8 w-8 rounded-full cursor-pointer"
-                  onClick={() => setOpen(!open)}
-                />
+                {user.photoURL && !avatarError ? (
+                  <img
+                    src={user.photoURL}
+                    alt="profile"
+                    className="h-8 w-8 rounded-full object-cover cursor-pointer"
+                    onError={() => setAvatarError(true)}
+                    onClick={() => setOpen(!open)}
+                  />
+                ) : (
+                  <div
+                    className="h-8 w-8 rounded-full bg-(--secondary-color) flex items-center justify-center text-white text-sm font-bold cursor-pointer"
+                    onClick={() => setOpen(!open)}
+                  >
+                    {(user.displayName || user.email || "U")[0].toUpperCase()}
+                  </div>
+                )}
 
                 {open && (
                   /* 🔧 FIX: remove hardcoded dark bg */

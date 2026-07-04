@@ -10,26 +10,19 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import Wordle from './pages/Wordle'
 import ThemeProvider from './utils/ThemeContext'
 
-const GoogleAuthWrapper=()=>{
-    return(
-        <GoogleOAuthProvider clientId='250275454878-b7qtn92r8os2otmr0eh438lki9tdsm6v.apps.googleusercontent.com'>
-            <Login></Login>
-        </GoogleOAuthProvider>
-    )
-}
-
-const router=createBrowserRouter([
-    {path:"/",element:<App/>},
-    {path:"/wordle",element:<Wordle/>},
-    {path:"/about",element:<About/>},
-    {path:"/practice",element:<Practice/>},
-    {path:"/academic",element:<Academic/>},
-    {path:"*",element:<NotFound/>},
+const router = createBrowserRouter([
+  { path: "/", element: <App /> },
+  { path: "/wordle", element: <Wordle /> },
+  { path: "/about", element: <About /> },
+  { path: "/practice", element: <Practice /> },
+  { path: "/academic", element: <Academic /> },
+  { path: "*", element: <NotFound /> },
 ])
 
-
 createRoot(document.getElementById('root')).render(
+  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
     <ThemeProvider>
-    <RouterProvider router={router}/> 
+      <RouterProvider router={router} />
     </ThemeProvider>
+  </GoogleOAuthProvider>
 )

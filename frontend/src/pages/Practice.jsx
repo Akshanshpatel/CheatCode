@@ -28,6 +28,7 @@ const Practice = () => {
   const results = isSearching ? searchQuestions(query) : [];
 
   const [activeTopic, setActiveTopic] = useState("dsa");
+  const [user, setUser] = useState(null);
 
   /* =======================
      TOPIC STATE
@@ -41,11 +42,12 @@ const Practice = () => {
      AUTH + PROGRESS LOAD
   ======================= */
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (user) => {
-      if (!user) return;
+    const unsub = onAuthStateChanged(auth, async (currentUser) => {
+      setUser(currentUser);
+      if (!currentUser) return;
 
-      await createUserIfNotExists(user);
-      const progress = await getUserProgress(user.uid);
+      await createUserIfNotExists(currentUser);
+      const progress = await getUserProgress(currentUser.uid);
       if (!progress?.solvedProblems) return;
 
       setTopicProblems(prev => {
@@ -198,7 +200,7 @@ const Practice = () => {
               openMap={openMap}
               setTopicProblems={setTopicProblems}
               setOpenMap={setOpenMap}
-              auth={auth}
+              user={user}
               toggleSolved={toggleSolved}
               toggleStarred={toggleStarred}
             />
